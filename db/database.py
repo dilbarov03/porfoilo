@@ -4,7 +4,7 @@ from sqlalchemy.orm import sessionmaker
 import cloudinary 
 
 
-SQLALCHEMY_DATABASE_URL = 'postgres://olbhfrcuqqpuik:73afafc5cbb346422a3e4d6a6b2b57c99dc15fc2be6d741f208e506cb7c14550@ec2-52-207-15-147.compute-1.amazonaws.com:5432/dlf9bu1oqt3b1'
+SQLALCHEMY_DATABASE_URL = 'postgresql://olbhfrcuqqpuik:73afafc5cbb346422a3e4d6a6b2b57c99dc15fc2be6d741f208e506cb7c14550@ec2-52-207-15-147.compute-1.amazonaws.com:5432/dlf9bu1oqt3b1'
  
 engine = create_engine(SQLALCHEMY_DATABASE_URL, connect_args={})
 
