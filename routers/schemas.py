@@ -59,6 +59,7 @@ class ProjectDisplay(BaseModel):
       orm_mode = True
 
 class CategoryProjects(BaseModel):
+   id: int
    title: str
    projects: List[ProjectDisplay]
 
