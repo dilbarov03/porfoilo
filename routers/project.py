@@ -65,7 +65,7 @@ def create(request: ProjectPost, db: Session = Depends(get_db), current_user: Us
       text = request.text,
       image_url = request.image_url,
       demo_link = request.demo_link,
-      github_link = request.demo_link, 
+      github_link = request.github_link, 
       timestamp = datetime.now(),
       category_id = request.category_id
    )
