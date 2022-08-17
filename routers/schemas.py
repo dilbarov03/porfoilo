@@ -46,6 +46,7 @@ class ProjectUpdate(BaseModel):
    category_id: Optional[int]
 
 class ProjectDisplay(BaseModel):
+   id: int
    title: str
    text: str
    image_url: str
