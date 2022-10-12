@@ -1,4 +1,3 @@
-from unicodedata import category
 from pydantic import BaseModel
 from datetime import datetime
 from typing import List, Optional
@@ -67,3 +66,15 @@ class CategoryProjects(BaseModel):
    class Config():
       orm_mode = True
 
+
+class AboutMe(BaseModel):
+   id: int
+   title: str
+   text: str
+   
+   class Config():
+      orm_mode = True
+   
+class AboutMeChange(BaseModel):
+   title: str
+   text: str

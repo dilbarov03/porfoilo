@@ -32,3 +32,9 @@ class Project(Base):
    category_id = Column(Integer, ForeignKey('category.id'))
    
    category = relationship("Category", back_populates="projects")
+
+class About(Base):
+   __tablename__ = "about"
+   id = Column(Integer, primary_key=True, index=True)
+   title = Column(String)
+   text = Column(String)

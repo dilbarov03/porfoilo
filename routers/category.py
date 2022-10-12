@@ -30,16 +30,16 @@ def create_category(request: CategoryPost, db: Session = Depends(get_db), curren
 
    return new_category
 
-@router.get("/{name}", response_model=CategoryProjects)
-def get_category_projects(name: str, db: Session = Depends(get_db)):
-   category = db.query(Category).filter(Category.title==name).first()
+@router.get("/{id}", response_model=CategoryProjects)
+def get_category_projects(id: int, db: Session = Depends(get_db)):
+   category = db.query(Category).filter(Category.id==id).first()
    if not category:
       raise HTTPException(status_code=status.HTTP_404_NOT_FOUND)
    return category
 
-@router.patch("/{name}", response_model=CategoryDisplay)
-def update_category(request: CategoryPost, name:str, db: Session = Depends(get_db), current_user: UserAuth = Depends(get_current_user)):
-   category = db.query(Category).filter(Category.title==name).first()
+@router.patch("/{id}", response_model=CategoryDisplay)
+def update_category(request: CategoryPost, id:int, db: Session = Depends(get_db), current_user: UserAuth = Depends(get_current_user)):
+   category = db.query(Category).filter(Category.id==id).first()
    if not category:
       raise HTTPException(status_code=status.HTTP_404_NOT_FOUND)
    category.title = request.title
