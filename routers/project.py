@@ -18,7 +18,7 @@ router = APIRouter(
 
 @router.get('/all', response_model=List[ProjectDisplay])
 def get_all(db: Session = Depends(get_db)):
-   projects = db.query(Project).all()
+   projects = db.query(Project).order_by(Project.id.desc()).all()
    return projects
 
 @router.get('/{id}', response_model=ProjectDisplay)
